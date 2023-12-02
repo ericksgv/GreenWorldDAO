@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build folders
+/build/
+/dist/
+
+# Dependency directories
+/pnpm-debug.log
+
+# Testing
+/coverage/
+
+# IDE
+/.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
