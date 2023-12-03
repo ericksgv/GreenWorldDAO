@@ -1,6 +1,6 @@
 import marketplace from '../../images/marketplace.png';
 import recompensas from '../../images/logro.png';
-
+import { Link } from 'react-router-dom';
 
 const SeccionCliente = () => {
 
@@ -19,11 +19,15 @@ const SeccionCliente = () => {
                 <div style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '20px' }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <img src={marketplace} alt="Image 1" style={{ width: '30vh', height: 'auto', marginRight: '10%', marginLeft: '20%' }} />
-                        <h2 className="text-3xl" style={estilotitulo}>MARKETPLACE</h2>
+                        <Link to="/producto"> 
+                        <button className="text-3xl" style={estilotitulo}>MARKETPLACE</button>
+                        </Link>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <img src={recompensas} alt="Image 2" style={{ width: '30vh', height: 'auto', marginRight: '10%' , marginLeft: '20%'}} />
-                        <h2 className="text-3xl" style={estilotitulo}>RECOMPENSAS</h2>
+                        <Link to="/contrato"> 
+                        <button className="text-3xl" style={estilotitulo}>RECOMPENSAS</button>
+                        </Link>
                     </div>
                 </div>
 
