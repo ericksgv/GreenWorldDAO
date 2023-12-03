@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import tokenABI from '../libs/tokensABI';
 import Web3 from 'web3';
 
-const NavSecundaria = () => {
+const NavCuarta = () => {
   const [celoBalance, setCeloBalance] = useState(0);
 
   const estilotitulo = {
@@ -39,7 +39,7 @@ const NavSecundaria = () => {
     return null;
   };
 
-  const getTokenBalance = async () => {
+  const connectMetamask = async () => {
     const web3 = await ethEnabled();
     if (!web3) {
       alert('Please install MetaMask to use this dApp!');
@@ -55,7 +55,7 @@ const NavSecundaria = () => {
 
     // Obtener saldos de tokens
     const tokenAddresses = [
-      ' 0xc7807933273c1fB06D0efB6381BF2F7b9F41ccC1' //cUSD
+      '0xA3A5Eb1f7E32E694d2d7653aC7866a63d1916543' //cUSD
     ];
 
     for (const tokenAddress of tokenAddresses) {
@@ -69,19 +69,19 @@ const NavSecundaria = () => {
   };
 
   useEffect(() => {
-    getTokenBalance();
+    connectMetamask();
   }, []);
 
   return (
     <header className="bg-lightgreen text-white p-8 flex items-center justify-between">
       <div>
         <h1 className="text-5xl font-bold ml-48" style={estilotitulo}>
-          Servicios
+          Canjea
         </h1>
       </div>
       <div className="flex space-x-9">
         <button className="bg-lightgreen px-24 py-2 rounded border border-blackgreen" style={estilobotones}>
-          {`0 gTok`}
+          {`0 gTk`}
         </button>
         <button className="bg-lightgreen text-white px-24 py-2 rounded border border-blackgreen" style={estilobotones}>
           {`${celoBalance} cUSD`}
@@ -94,4 +94,4 @@ const NavSecundaria = () => {
   );
 };
 
-export { NavSecundaria };
+export { NavCuarta };
