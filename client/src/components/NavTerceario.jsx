@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import tokenABI from '../libs/tokensABI';
 import Web3 from 'web3';
 
-const NavSecundaria = () => {
+const NavTercearia = () => {
   const [celoBalance, setCeloBalance] = useState(0);
 
   const estilotitulo = {
@@ -76,7 +76,7 @@ const NavSecundaria = () => {
     <header className="bg-lightgreen text-white p-8 flex items-center justify-between">
       <div>
         <h1 className="text-5xl font-bold ml-48" style={estilotitulo}>
-          Servicios
+          Productos
         </h1>
       </div>
       <div className="flex space-x-9">
@@ -94,4 +94,4 @@ const NavSecundaria = () => {
   );
 };
 
-export { NavSecundaria };
+export { NavTercearia };
