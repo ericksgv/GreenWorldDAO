@@ -1,5 +1,6 @@
 import { LandingPage, NavPrincipal, SeccionCliente } from './components'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
             <div className="min-h-screen bg-white">
               <NavPrincipal />
               <LandingPage />
+              <Footer />
             </div>} />
         </Routes>
       </div>

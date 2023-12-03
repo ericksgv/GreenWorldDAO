@@ -44,7 +44,7 @@ const LandingPage = () => {
                     </button>
                 </div>
             </div>
-            <div className="flex items-center justify-center w-screen">
+            <div className="flex items-center justify-center ">
                 <p className="text-3xl" style={estiloparrafo}>Siente la Magia de la Naturaleza con Green World</p>
             </div>
 
@@ -61,6 +61,8 @@ const LandingPage = () => {
                     <h2 className="text-xl font-bold mb-4 text-center">Productos que cuidan, beneficios que perduran</h2>
                 </div>
             </div>
+
+           
         </>
     )
 }

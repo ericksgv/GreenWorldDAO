@@ -7,7 +7,7 @@ const NavPrincipal = () => {
 
     return (
         <>
-            <header className="flex items-center justify-center w-screen bg-green text-white py-2 text-5xl">
+            <header className="flex items-center justify-center bg-green text-white py-2 text-5xl">
                 <h1 style={estiloTexto}>Green World</h1>
             </header>
         </>
