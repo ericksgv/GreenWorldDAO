@@ -1,8 +1,9 @@
 import { LandingPage, NavPrincipal, SeccionCliente } from './components'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-
-
+import { NavSecundaria } from './components/NavSecundaria.jsx'
+import { NavTercearia } from './components/NavTerceario.jsx'
+import { SeccionCliente2 } from './components/SeccionCliente2.jsx'
 const App = () => {
   return (
     <Router>
@@ -10,8 +11,9 @@ const App = () => {
         <Routes>
           <Route path="/cliente" element={
             <div className="min-h-screen bg-lightgreen">
-          <SeccionCliente />
-          </div>
+              <NavSecundaria />
+              <SeccionCliente />
+            </div>
           } />
           <Route path="/" element={
             <div className="min-h-screen bg-white">
@@ -19,6 +21,12 @@ const App = () => {
               <LandingPage />
               <Footer />
             </div>} />
+          <Route path="/producto" element={
+            <div className="min-h-screen bg-lightgreen">
+              <NavTercearia />
+              <SeccionCliente2 />
+            </div>
+          } />
         </Routes>
       </div>
     </Router>

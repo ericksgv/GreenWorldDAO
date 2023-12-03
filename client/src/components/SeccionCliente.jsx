@@ -1,4 +1,3 @@
-import { NavSecundaria } from './NavSecundaria.jsx'
 import marketplace from '../../images/marketplace.png';
 import recompensas from '../../images/logro.png';
 
@@ -15,7 +14,6 @@ const SeccionCliente = () => {
 
     return (
         <>
-            <NavSecundaria />
             <div style={{ display: 'flex', height: 'calc(80vh - 64px)' }}>
                 {/* Left side with images and titles */}
                 <div style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '20px' }}>
