@@ -4,6 +4,7 @@ import Web3 from 'web3';
 
 const NavTercearia = () => {
   const [celoBalance, setCeloBalance] = useState(0);
+  const [gTokBalance, setGtokBalance] = useState(0);
 
   const estilotitulo = {
     color: '#2D2D2D',
@@ -42,7 +43,7 @@ const NavTercearia = () => {
   const connectMetamask = async () => {
     const web3 = await ethEnabled();
     if (!web3) {
-      alert('Please install MetaMask to use this dApp!');
+      alert('Por favor, instala MetaMask para usar esta dApp.');
       return;
     }
 
@@ -50,22 +51,16 @@ const NavTercearia = () => {
     const userAccount = accounts[0];
 
     // Obtener saldo de CELO
-    const celoBalance = await web3.eth.getBalance(userAccount);
-    setCeloBalance(web3.utils.fromWei(celoBalance, 'ether'));
+    const celoBalanceWei = await web3.eth.getBalance(userAccount);
+    const formattedCeloBalance = web3.utils.fromWei(celoBalanceWei, 'ether');
+    setCeloBalance(formattedCeloBalance);
 
-    // Obtener saldos de tokens
-    const tokenAddresses = [
-      '0xA3A5Eb1f7E32E694d2d7653aC7866a63d1916543' //cUSD
-    ];
-
-    for (const tokenAddress of tokenAddresses) {
-      const tokenInst = new web3.eth.Contract(tokenABI, tokenAddress);
-      const tokenBalance = await tokenInst.methods.balanceOf(userAccount).call();
-      const formattedTokenBalance = Number(tokenBalance) / 1000;
-      //const tokenBalanceInEther = web3.utils.fromWei(tokenBalance, 'ether');
-      console.log(`Token Balance for ${tokenAddress}: ${formattedTokenBalance}`);
-      setCeloBalance(formattedTokenBalance)
-    }
+    // Obtener saldo de gTok
+    const gTokAddress = '0x494798D4D23917c5DaC8B63B57B1b415C8fAEB08'; // Dirección de contrato de gTok
+    const gTokInst = new web3.eth.Contract(tokenABI, gTokAddress);
+    const gTokBalanceWei = await gTokInst.methods.balanceOf(userAccount).call();
+    const formattedGtokBalance = Number(gTokBalanceWei) / 1000;
+    setGtokBalance(formattedGtokBalance);
   };
 
   useEffect(() => {
@@ -81,7 +76,7 @@ const NavTercearia = () => {
       </div>
       <div className="flex space-x-9">
         <button className="bg-lightgreen px-24 py-2 rounded border border-blackgreen" style={estilobotones}>
-          {`0 gTk`}
+          {`${gTokBalance} gTok`}
         </button>
         <button className="bg-lightgreen text-white px-24 py-2 rounded border border-blackgreen" style={estilobotones}>
           {`${celoBalance} cUSD`}
