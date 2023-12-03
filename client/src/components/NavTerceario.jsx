@@ -41,33 +41,49 @@ const NavTercearia = () => {
     return null;
   };
 
-  const connectMetamask = async () => {
-    const web3 = await ethEnabled();
-    if (!web3) {
-      alert('Por favor, instala MetaMask para usar esta dApp.');
-      return;
-    }
-
-    const accounts = await web3.eth.getAccounts();
-    const userAccount = accounts[0];
-
-    // Obtener saldo de CELO
-    const cUSDAddress = '0xc7807933273c1fB06D0efB6381BF2F7b9F41ccC1'; // Dirección de contrato de gTok
-    const cUSDInst = new web3.eth.Contract(tokenABI, cUSDAddress);
-    const cUSDBalanceWei = await cUSDInst.methods.balanceOf(userAccount).call();
-    const formattedCeloBalance = Number(cUSDBalanceWei) / 1000;
-    setCeloBalance(formattedCeloBalance);
-
-    // Obtener saldo de gTok
-    const gTokAddress = '0x494798D4D23917c5DaC8B63B57B1b415C8fAEB08'; // Dirección de contrato de gTok
-    const gTokInst = new web3.eth.Contract(tokenABI, gTokAddress);
-    const gTokBalanceWei = await gTokInst.methods.balanceOf(userAccount).call();
-    const formattedGtokBalance = Number(gTokBalanceWei) / 1000;
-    setGtokBalance(formattedGtokBalance);
-  };
-
   useEffect(() => {
+    const connectMetamask = async () => {
+      const web3 = await ethEnabled();
+      if (!web3) {
+        alert('Por favor, instala MetaMask para usar esta dApp.');
+        return;
+      }
+
+      const accounts = await web3.eth.getAccounts();
+      const userAccount = accounts[0];
+
+      // Obtener saldo de CELO
+      const cUSDAddress = '0xc7807933273c1fB06D0efB6381BF2F7b9F41ccC1'; // Dirección de contrato de gTok
+      const cUSDInst = new web3.eth.Contract(tokenABI, cUSDAddress);
+      const cUSDBalanceWei = await cUSDInst.methods.balanceOf(userAccount).call();
+      const formattedCeloBalance = Number(cUSDBalanceWei) / 1000;
+      setCeloBalance(formattedCeloBalance);
+
+      // Obtener saldo de gTok
+      const gTokAddress = '0xE4fc89e5C8558122f8D290Cd8287309F6C587Ef8'; // Dirección de contrato de gTok
+      const gTokInst = new web3.eth.Contract(tokenABI, gTokAddress);
+      const gTokBalanceWei = await gTokInst.methods.balanceOf(userAccount).call();
+      const formattedGtokBalance = Number(gTokBalanceWei) / 1000;
+      setGtokBalance(formattedGtokBalance);
+    };
+
+    const handleAccountsChanged = (accounts) => {
+      if (accounts.length > 0) {
+        // Se actualiza la información al cambiar de cuenta
+        connectMetamask();
+      }
+    };
+
+    // Suscribirse al evento accountsChanged
+    window.ethereum.on('accountsChanged', handleAccountsChanged);
+
+    // Conectar Metamask al cargar el componente
     connectMetamask();
+
+    // Limpiar la suscripción al desmontar el componente
+    return () => {
+      window.ethereum.off('accountsChanged', handleAccountsChanged);
+    };
   }, []);
 
   return (

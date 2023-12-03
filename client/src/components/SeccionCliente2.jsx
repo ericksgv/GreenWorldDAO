@@ -63,8 +63,11 @@ const pay = async () => {
             const approveAmount = web3.utils.toWei(1000000, "wei");
             await contratocUSD.methods.approve(contrato.options.address, approveAmount).send({ from: account });
 
-            // Realizar el pago
-            await contrato.methods.depositERC20(tokenAddress, 1000).send({ from: account });
+            // Obtener la dirección del contrato cUSD del estado
+            const cUSDAddress = contratocUSD.options.address;
+
+            // Realizar el pago con el token cUSD
+            await contrato.methods.depositERC20(cUSDAddress, web3.utils.toWei("1000", "wei")).send({ from: account });
 
             console.log(`Pago y depósito exitosos para el producto con dirección ${tokenAddress}`);
         } catch (error) {
