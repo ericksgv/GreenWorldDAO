@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import tokenABI from '../libs/tokensABI';
 import Web3 from 'web3';
+import { Link } from 'react-router-dom';
 
 const NavTercearia = () => {
   const [celoBalance, setCeloBalance] = useState(0);
@@ -71,8 +72,13 @@ const NavTercearia = () => {
 
   return (
     <header className="bg-lightgreen text-white p-8 flex items-center justify-between">
-      <div>
-        <h1 className="text-5xl font-bold ml-48" style={estilotitulo}>
+      <div className='flex'>
+        <Link to="/cliente">
+          <div className="cursor-pointer " style={{ fontSize: '4em', color: '#053126' }}>
+            &#8592;
+          </div>
+        </Link>
+        <h1 className="text-5xl font-bold ml-24 mt-8" style={estilotitulo}>
           Productos
         </h1>
       </div>
