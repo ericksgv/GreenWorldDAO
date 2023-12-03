@@ -94,7 +94,7 @@ const pay = async () => {
                         <img
                             src={cepillo}
                             alt="Image 1"
-                            className="mt-4" // Ajusta el margen superior según sea necesario
+                            className="mt-0" // Ajusta el margen superior según sea necesario
                             style={{ width: '20vh', height: 'auto' }}
                         />
                         <div className="flex flex-col items-center mt-4">
