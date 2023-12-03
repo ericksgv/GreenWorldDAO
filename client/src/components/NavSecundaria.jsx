@@ -39,7 +39,7 @@ const NavSecundaria = () => {
     return null;
   };
 
-  const connectMetamask = async () => {
+  const getTokenBalance = async () => {
     const web3 = await ethEnabled();
     if (!web3) {
       alert('Please install MetaMask to use this dApp!');
@@ -69,7 +69,7 @@ const NavSecundaria = () => {
   };
 
   useEffect(() => {
-    connectMetamask();
+    getTokenBalance();
   }, []);
 
   return (
