@@ -2,29 +2,15 @@
     "address":"",
     "abi":[
         {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
                     "internalType": "address",
-                    "name": "tokenOwner",
+                    "name": "_greenTokenAddress",
                     "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "tokens",
-                    "type": "uint256"
                 }
             ],
-            "name": "Approval",
-            "type": "event"
+            "stateMutability": "nonpayable",
+            "type": "constructor"
         },
         {
             "anonymous": false,
@@ -32,9 +18,28 @@
                 {
                     "indexed": true,
                     "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
                     "name": "from",
                     "type": "address"
                 },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
                 {
                     "indexed": true,
                     "internalType": "address",
@@ -44,58 +49,23 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "tokens",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "Transfer",
+            "name": "Withdraw",
             "type": "event"
         },
         {
             "inputs": [
                 {
                     "internalType": "address",
-                    "name": "tokenOwner",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
-                    "name": "spender",
+                    "name": "_user",
                     "type": "address"
                 }
             ],
-            "name": "allowance",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "remaining",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "tokens",
-                    "type": "uint256"
-                }
-            ],
-            "name": "approve",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
+            "name": "addAuthorizedUser",
+            "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
         },
@@ -103,24 +73,30 @@
             "inputs": [
                 {
                     "internalType": "address",
-                    "name": "tokenOwner",
+                    "name": "",
                     "type": "address"
                 }
             ],
-            "name": "balanceOf",
+            "name": "authorizedUsers",
             "outputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "balance",
-                    "type": "uint256"
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
                 }
             ],
             "stateMutability": "view",
             "type": "function"
         },
         {
-            "inputs": [],
-            "name": "totalSupply",
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_token",
+                    "type": "address"
+                }
+            ],
+            "name": "balanceOfERC20",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -135,23 +111,43 @@
             "inputs": [
                 {
                     "internalType": "address",
-                    "name": "to",
+                    "name": "_token",
                     "type": "address"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "tokens",
+                    "name": "_amount",
                     "type": "uint256"
                 }
             ],
-            "name": "transfer",
+            "name": "depositERC20",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "greenTokenContract",
             "outputs": [
                 {
-                    "internalType": "bool",
-                    "name": "success",
-                    "type": "bool"
+                    "internalType": "contract gTOK",
+                    "name": "",
+                    "type": "address"
                 }
             ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_user",
+                    "type": "address"
+                }
+            ],
+            "name": "removeAuthorizedUser",
+            "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
         },
@@ -159,28 +155,17 @@
             "inputs": [
                 {
                     "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
-                    "name": "to",
+                    "name": "_token",
                     "type": "address"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "tokens",
+                    "name": "_amount",
                     "type": "uint256"
                 }
             ],
-            "name": "transferFrom",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
+            "name": "withdrawERC20",
+            "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
         }
