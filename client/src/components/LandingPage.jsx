@@ -9,6 +9,14 @@ const LandingPage = () => {
         fontWeight: 'bold',
     };
 
+    const estiloparrafo = {
+        color: '#4C894F',
+        textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+        fontFamily: 'Rakkas',
+        fontWeight: 'bold',
+      };
+      
+
     return (
         <>
             <div className="flex flex-wrap items-center justify-center mt-8 p-4 bg-white">
@@ -36,6 +44,10 @@ const LandingPage = () => {
                     </button>
                 </div>
             </div>
+            <div className="flex items-center justify-center w-screen">
+                <p className= "text-3xl" style={estiloparrafo}>Siente la Magia de la Naturaleza con Green World</p>
+            </div>
+
         </>
     )
 }
