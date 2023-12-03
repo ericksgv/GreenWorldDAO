@@ -69,8 +69,7 @@ const pay = async () => {
             console.log(`Pago y depósito exitosos para el producto con dirección ${tokenAddress}`);
         } catch (error) {
             console.error("Error al procesar el pago:", error.message);
-console.error("Detalles de la transacción revertida:", error.transactionReceipt);
-
+            console.error("Detalles de la transacción revertida:", error.transactionReceipt);
             console.error("Error al procesar el pago:", error.message);
         }
     };
@@ -100,6 +99,9 @@ console.error("Detalles de la transacción revertida:", error.transactionReceipt
                                 <button className="text-lg mb-2 bg-green mr-2 rounded-lg p-2" onClick={pay}>
                                     <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>Paga</p>
                                     <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>10 cUSD</p>
+                                </button>
+                                <button>
+
                                 </button>
                                 <div className="text-lg mb-2 bg-grencarmel mr-2 rounded-lg p-2" >
                                     <p className="text-lg mb-2 bg-grencarmel rounded-lg" style={estiloparrafo}>Recibe</p>

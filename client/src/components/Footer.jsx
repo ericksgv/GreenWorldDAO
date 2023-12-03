@@ -1,6 +1,8 @@
 import refi from '../../images/refi.png';
 import celo from '../../images/celo.png';
 import github from '../../images/github.png';
+import logo from '../../images/GreenLogoSinfondo.png';
+
 
 const Footer = () => {
 
@@ -16,6 +18,12 @@ const Footer = () => {
         <footer className="bg-lightgreen p-8 flex items-center justify-between">
             {/* Left half with "Green World" */}
             <div className="flex items-center ">
+            <img
+            src={logo}
+            alt="Nueva Imagen"
+            className="mb-4 ml-14"
+            style={{ width: '10vh', height: 'auto' }}
+        />
                 <p className="text-5xl" style={estilosparrafos}>Green World</p>
             </div>
 
