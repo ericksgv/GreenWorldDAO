@@ -66,54 +66,59 @@ const LandingPage = () => {
 
     return (
         <>
-            <div className="flex flex-wrap items-center justify-center mt-8 p-4 bg-white">
-                <div className="mb-4 px-24 ">
-                    <img
-                        src={billetera}
-                        alt="Primera Imagen"
-                        className="mb-4 ml-14"
-                        style={{ width: '25vh', height: 'auto' }}
-                    />
-                   <Link to="/cliente"> {/* Utiliza Link para la redirección */}
-                        <button
-                            className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen"
-                            style={estiloBotones}
-                            onClick={connectMetamask}
-                        >
-                            Cliente
-                        </button>
-                    </Link>
-                </div>
+<div className="flex flex-wrap items-center justify-center mt-8 p-4 bg-white">
+    {/* Logo y botón para el Cliente */}
+    <div className="mb-4 px-16 ">
+        <img
+            src={billetera}
+            alt="Primera Imagen"
+            className="mb-4 ml-14"
+            style={{ width: '25vh', height: 'auto' }}
+        />
+        <Link to="/cliente">
+            <button
+                className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen"
+                style={estiloBotones}
+                onClick={connectMetamask}
+            >
+                Cliente
+            </button>
+        </Link>
+    </div>
 
-                <div className="mb-4 px-28" >
-                    <img
-                        src={blockchain}
-                        alt="Segunda Imagen"
-                        className="mb-4 ml-14 "
-                        style={{ width: '25vh', height: 'auto' }}
-                    />
-                    <button className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen" style={estiloBotones}>
-                        Productor
-                    </button>
-                </div>
-            </div>
-            <div className="flex items-center justify-center ">
-                <p className="text-3xl" style={estiloparrafo}>Siente la Magia de la Naturaleza con Green World</p>
-            </div>
+    {/* Logo y botón para el Productor */}
+    <div className="mb-4 px-16" >
+        <img
+            src={blockchain}
+            alt="Segunda Imagen"
+            className="mb-4 ml-14 "
+            style={{ width: '25vh', height: 'auto' }}
+        />
+        <button className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen" style={estiloBotones}>
+            Productor
+        </button>
+    </div>
+</div>
 
-            <div className="flex justify-center">
-                <div className="bg-lightgreen rounded-lg overflow-hidden shadow-md m-4 p-6 w-60 justify-center items-center flex">
-                    <h2 className="text-xl font-bold mb-4 text-center">Genera ingresos mientras adoptas un estilo de vida ecoamigable</h2>
-                </div>
+<div className="flex items-center justify-center ">
+    <p className="text-3xl" style={estiloparrafo}>Siente la Magia de la Naturaleza con Green World</p>
+</div>
 
-                <div className="bg-lightgreen rounded-lg overflow-hidden shadow-md m-4 p-6 w-60 justify-center items-center flex">
-                    <h2 className="text-xl font-bold mb-4 text-center">Monetiza tu compromiso con lo sostenible</h2>
-                </div>
+<div className="flex justify-center">
+    {/* Bloques de contenido */}
+    <div className="bg-lightgreen rounded-lg overflow-hidden shadow-md m-4 p-6 w-60 justify-center items-center flex">
+        <h2 className="text-xl font-bold mb-4 text-center">Genera ingresos mientras adoptas un estilo de vida ecoamigable</h2>
+    </div>
 
-                <div className="bg-lightgreen rounded-lg overflow-hidden shadow-md m-4 p-6 w-60 justify-center items-center flex">
-                    <h2 className="text-xl font-bold mb-4 text-center">Productos que cuidan, beneficios que perduran</h2>
-                </div>
-            </div>
+    <div className="bg-lightgreen rounded-lg overflow-hidden shadow-md m-4 p-6 w-60 justify-center items-center flex">
+        <h2 className="text-xl font-bold mb-4 text-center">Monetiza tu compromiso con lo sostenible</h2>
+    </div>
+
+    <div className="bg-lightgreen rounded-lg overflow-hidden shadow-md m-4 p-6 w-60 justify-center items-center flex">
+        <h2 className="text-xl font-bold mb-4 text-center">Productos que cuidan, beneficios que perduran</h2>
+    </div>
+</div>
+
 
            
         </>
