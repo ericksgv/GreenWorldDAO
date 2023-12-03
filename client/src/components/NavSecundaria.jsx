@@ -51,8 +51,10 @@ const NavSecundaria = () => {
     const userAccount = accounts[0];
 
     // Obtener saldo de CELO
-    const celoBalanceWei = await web3.eth.getBalance(userAccount);
-    const formattedCeloBalance = web3.utils.fromWei(celoBalanceWei, 'ether');
+    const cUSDAddress = '0xc7807933273c1fB06D0efB6381BF2F7b9F41ccC1'; // Dirección de contrato de gTok
+    const cUSDInst = new web3.eth.Contract(tokenABI, cUSDAddress);
+    const cUSDBalanceWei = await cUSDInst.methods.balanceOf(userAccount).call();
+    const formattedCeloBalance = Number(cUSDBalanceWei) / 1000;
     setCeloBalance(formattedCeloBalance);
 
     // Obtener saldo de gTok
