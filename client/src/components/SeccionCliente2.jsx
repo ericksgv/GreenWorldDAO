@@ -101,7 +101,7 @@ const pay = async () => {
                             <div className="flex items-center justify-center mb-4">
                                 <button className="text-lg mb-2 bg-green mr-2 rounded-lg p-2" onClick={pay}>
                                     <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>Paga</p>
-                                    <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>10 cUSD</p>
+                                    <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>1 cUSD</p>
                                 </button>
 
                                 <div className="text-lg mb-2 bg-grencarmel mr-2 rounded-lg p-2" >
