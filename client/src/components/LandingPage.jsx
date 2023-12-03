@@ -1,6 +1,7 @@
 import billetera from '../../images/billetera.png';
 import blockchain from '../../images/blockchain.png';
 import Web3 from 'web3';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
 
@@ -27,6 +28,7 @@ const LandingPage = () => {
                 
                 // Display a toast message
                 console.log(`Balance: ${etherBalance} ETH`);
+
 
                 } else {
                     // Request account access
@@ -72,13 +74,15 @@ const LandingPage = () => {
                         className="mb-4 ml-14"
                         style={{ width: '25vh', height: 'auto' }}
                     />
-                    <button
-                    className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen"
-                    style={estiloBotones}
-                    onClick={connectMetamask}
-                    >
-                        Cliente
-                    </button>
+                   <Link to="/cliente"> {/* Utiliza Link para la redirección */}
+                        <button
+                            className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen"
+                            style={estiloBotones}
+                            onClick={connectMetamask}
+                        >
+                            Cliente
+                        </button>
+                    </Link>
                 </div>
 
                 <div className="mb-4 px-28" >
