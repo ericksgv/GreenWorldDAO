@@ -5,8 +5,10 @@ const App = () => {
 
   return (
     <>
-      <NavPrincipal />
-      <LandingPage />
+      <div className="min-h-screen bg-white">
+        <NavPrincipal />
+        <LandingPage />
+      </div>
     </>
   )
 }
