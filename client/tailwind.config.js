@@ -11,6 +11,7 @@ module.exports = {
         lightgreen : '#CBE9D2',
         blackgreen : '#053126',
         gray: '#f5f5f5',
+        grencarmel: '#79BD9A',
       },
     },
   },
