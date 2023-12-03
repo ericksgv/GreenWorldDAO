@@ -50,7 +50,7 @@ const SeccionCliente3 = () => {
                 <div className="flex ml-60">
                     <div className="flex flex-col items-center">
                         <img src={planeta} alt="Imagen" className="mb-4" style={{ width: '45vh', height: 'auto', }}/>
-                        <button className="bg-blackgreen text-white px-24 py-2 rounded-full border border-blackgreen" style={estilobotones2}>Botón</button>
+                        <button className="bg-blackgreen text-white px-24 py-2 rounded-full border border-blackgreen" style={estilobotones2}>Reclamar</button>
                     </div>
                 </div>
 
