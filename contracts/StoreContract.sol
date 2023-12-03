@@ -38,7 +38,7 @@ interface ERC20Interface {
 }
 
 // Token Contract
-contract Token is ERC20Interface, SafeMath {
+contract cUSD is ERC20Interface, SafeMath {
     string public symbol;
     string public  name;
     uint8 public decimals;
@@ -48,8 +48,8 @@ contract Token is ERC20Interface, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() {
-        symbol = "gUSD";
-        name = "GreenUSD";
+        symbol = "cUSD";
+        name = "CeloUSD";
         decimals = 3;
         _totalSupply = 100000;
         balances[msg.sender] = _totalSupply;
