@@ -8,7 +8,7 @@ const App = () => {
       <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/cliente" element={
-            <div className="min-h-screen bg-white">
+            <div className="min-h-screen bg-lightgreen">
           <SeccionCliente />
           </div>
           } />
