@@ -10,6 +10,10 @@ contract gTOK is ERC20Interface, safeMath {
     uint8 public decimals;
     uint private _totalSupply;  // Variable para llevar registro del suministro total
 
+    // Nuevas adiciones para mantener el registro de los titulares de tokens
+    address[] private tokenHolders;
+    mapping (address => bool) private isTokenHolder;
+
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
 
@@ -26,6 +30,7 @@ contract gTOK is ERC20Interface, safeMath {
 
     function mint(address to, uint tokens) public {
         // Aquí deberías agregar lógica para asegurarte de que solo el contrato StoreWallet puede llamar a esta función
+        updateTokenHolders(to);
         balances[to] = safeAdd(balances[to], tokens);
         _totalSupply = safeAdd(_totalSupply, tokens);  // Actualiza el suministro total
         emit Transfer(address(0), to, tokens);
@@ -35,6 +40,7 @@ contract gTOK is ERC20Interface, safeMath {
     }
 
     function transfer(address to, uint tokens) public returns (bool success) {
+        updateTokenHolders(to);
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
         balances[to] = safeAdd(balances[to], tokens);
         emit Transfer(msg.sender, to, tokens);
@@ -48,6 +54,7 @@ contract gTOK is ERC20Interface, safeMath {
     }
 
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
+        updateTokenHolders(to);
         balances[from] = safeSub(balances[from], tokens);
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
         balances[to] = safeAdd(balances[to], tokens);
@@ -55,7 +62,20 @@ contract gTOK is ERC20Interface, safeMath {
         return true;
     }
 
+    // Función para actualizar la lista de titulares de tokens
+    function updateTokenHolders(address _user) private {
+        if (!isTokenHolder[_user]) {
+            tokenHolders.push(_user);
+            isTokenHolder[_user] = true;
+        }
+    }
+
     function allowance(address tokenOwner, address spender) public view returns (uint remaining) {
         return allowed[tokenOwner][spender];
     }
+    // Función para obtener la lista de titulares de tokens
+    function getTokenHolders() public view returns (address[] memory) {
+        return tokenHolders;
+    }
+    
 }
