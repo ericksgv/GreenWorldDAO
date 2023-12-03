@@ -16,10 +16,10 @@ const LandingPage = () => {
                     <img
                         src={billetera}
                         alt="Primera Imagen"
-                        className="mb-4 ml-8"
-                        style={{ width: '200px', height: '200px' }}
+                        className="mb-4 ml-14"
+                        style={{ width: '25vh', height: 'auto' }}
                     />
-                    <button className="bg-custom-green text-white px-20 py-2 text-3xl" style={estiloBotones}>
+                    <button className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen" style={estiloBotones}>
                         Cliente
                     </button>
                 </div>
@@ -28,10 +28,10 @@ const LandingPage = () => {
                     <img
                         src={blockchain}
                         alt="Segunda Imagen"
-                        className="mb-4 ml-8 "
-                        style={{ width: '200px', height: '200px' }}
+                        className="mb-4 ml-14 "
+                        style={{ width: '25vh', height: 'auto' }}
                     />
-                    <button className=" bg-custom-green text-white px-20 py-2 text-3xl" style={estiloBotones}>
+                    <button className="bg-lightgreen text-white px-20 py-2 text-3xl rounded-lg border border-blackgreen" style={estiloBotones}>
                         Productor
                     </button>
                 </div>
