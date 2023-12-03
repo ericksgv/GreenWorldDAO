@@ -55,7 +55,7 @@ const NavSecundaria = () => {
 
     // Obtener saldos de tokens
     const tokenAddresses = [
-      '0xA3A5Eb1f7E32E694d2d7653aC7866a63d1916543' //cUSD
+      ' 0xc7807933273c1fB06D0efB6381BF2F7b9F41ccC1' //cUSD
     ];
 
     for (const tokenAddress of tokenAddresses) {
@@ -81,7 +81,7 @@ const NavSecundaria = () => {
       </div>
       <div className="flex space-x-9">
         <button className="bg-lightgreen px-24 py-2 rounded border border-blackgreen" style={estilobotones}>
-          {`0 gTk`}
+          {`0 gTok`}
         </button>
         <button className="bg-lightgreen text-white px-24 py-2 rounded border border-blackgreen" style={estilobotones}>
           {`${celoBalance} cUSD`}

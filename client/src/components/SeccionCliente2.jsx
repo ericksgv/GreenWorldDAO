@@ -18,6 +18,9 @@ const SeccionCliente2 = () => {
         fontWeight: 'bold',
     };
 
+    const pay = async () => {
+    
+    }
     return (
         <>
             <div style={{ display: 'flex', height: 'calc(80vh - 64px)', alignItems: 'center' }}>
@@ -37,10 +40,10 @@ const SeccionCliente2 = () => {
                         />
                         <div className="flex flex-col items-center mt-4">
                             <div className="flex items-center justify-center mb-4">
-                                <div className="text-lg mb-2 bg-green mr-2 rounded-lg p-2" >
+                                <button className="text-lg mb-2 bg-green mr-2 rounded-lg p-2" onClick={pay}>
                                     <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>Paga</p>
                                     <p className="text-lg mb-2 bg-green rounded-lg" style={estiloparrafo}>10 cUSD</p>
-                                </div>
+                                </button>
                                 <div className="text-lg mb-2 bg-grencarmel mr-2 rounded-lg p-2" >
                                     <p className="text-lg mb-2 bg-grencarmel rounded-lg" style={estiloparrafo}>+</p>
                                     <p className="text-lg mb-2 bg-grencarmel rounded-lg" style={estiloparrafo}>0.1 gtk</p>                                </div>
