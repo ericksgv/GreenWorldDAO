@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import { NavSecundaria } from './components/NavSecundaria.jsx'
 import { NavTercearia } from './components/NavTerceario.jsx'
 import { SeccionCliente2 } from './components/SeccionCliente2.jsx'
+import { SeccionCliente3 } from './components/SeccionCliente3.jsx'
 import { NavCuarta } from './components/NavCuarta.jsx'
 const App = () => {
   return (
@@ -31,7 +32,7 @@ const App = () => {
           <Route path="/contrato" element={
             <div className="min-h-screen bg-lightgreen">
               <NavCuarta />
-              <SeccionCliente2 />
+              <SeccionCliente3 />
             </div>
           } />
         </Routes>
