@@ -66,7 +66,7 @@ const SeccionCliente2 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="border bg-blackgreen p-8 h-96 w-72 rounded-e-3xl flex flex-col items-center justify-center text-center">
+                    <div className="border bg-blackgreen p-8 h-96 w-72 rounded-2xl flex flex-col items-center justify-center text-center">
                         <h3 className="text-2xl pb-4" style={estilotitulo}>{"Vaso de carton"}</h3>
                         <img src={vaso} alt="Image 1" style={{ width: '30vh', height: 'auto', }} />
                         <div className="flex flex-col items-center mt-4">
